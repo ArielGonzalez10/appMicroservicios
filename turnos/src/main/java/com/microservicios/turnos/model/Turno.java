@@ -2,14 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.microservicios.pacientes.model;
+package com.microservicios.turnos.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
 import java.time.LocalDate;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -25,13 +23,11 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Paciente {
+public class Turno {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Long idPaciente;
-    private String dni;
-    private String nombre;
-    private String apellido;
-    private LocalDate fechaNac;
-    private String telefono;
+    private Long id_turno;
+    private LocalDate fecha;
+    private String tratamiento;
+    private String nombreCompletoPaciente;
 }

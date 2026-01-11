@@ -18,4 +18,6 @@ public interface IPacienteService {
    public void eliminarPaciente(Long p_id_paciente);
    public Paciente buscarPaciente(Long p_id_paciente);
    public void modificarPaciente(Long p_id_paciente,Paciente p_paciente);
+   //Agregamos el metodo que necesitamos personalizar para consumir los datos del paciente
+   public Paciente buscarPaciente(String p_dni);
 }

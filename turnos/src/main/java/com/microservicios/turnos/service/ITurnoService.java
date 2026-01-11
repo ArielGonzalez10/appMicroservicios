@@ -15,8 +15,10 @@ import java.util.List;
 
 public interface ITurnoService {
     public List<Turno>listaTurnos();
-    public void crearTurno(LocalDate p_fecha,String tratamiento,String p_dni_paciente);
+    public void crearTurno(LocalDate p_fecha,String p_tratamiento,String p_dni_paciente);
     public void eliminarTurno(Long p_id_turno);
     public Turno buscarTurno(Long p_id_turno);
     public void modificarTurno(Long p_id_turno,Turno p_turno);
+    
+    
 }

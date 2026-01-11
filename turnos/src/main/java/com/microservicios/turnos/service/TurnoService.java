@@ -10,6 +10,7 @@ import java.time.LocalDate;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 /**
  *
@@ -20,6 +21,10 @@ public class TurnoService implements ITurnoService{
     
     @Autowired
     private ITurnoRepository turnoRepo;
+    
+    //Se inyecta el restTemplate y debe hacer referencia al bean, por lo tanto debe tener el mismo nombre que el bean
+    @Autowired
+    private RestTemplate apiConsumir;
 
     @Override
     public List<Turno> listaTurnos() {
@@ -47,8 +52,15 @@ public class TurnoService implements ITurnoService{
     }
 
     @Override
-    public void crearTurno(LocalDate p_fecha, String tratamiento, String p_dni_paciente) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void crearTurno(LocalDate p_fecha, String p_tratamiento, String p_dni_paciente) {
+        
+            //Paso 1: Buscar el paciente en la api de pacientes
+            //Paso 2: Setear los datos del paciente en un objeto
+            //Paso 3: Setear los datos del nuevo turno
+            Turno nuevoTurno = new Turno();
+            nuevoTurno.setFecha(p_fecha);
+            nuevoTurno.setTratamiento(p_tratamiento);
+            //nuevoTurno.setNombreCompletoPaciente(p_dni_paciente);
+            turnoRepo.save(nuevoTurno);
     }
-    
 }

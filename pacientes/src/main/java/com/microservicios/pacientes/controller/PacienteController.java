@@ -56,4 +56,9 @@ public class PacienteController {
     public Paciente buscarPaciente(@PathVariable Long p_id_paciente){
         return pacienteServ.buscarPaciente(p_id_paciente);
     }
+    
+    @GetMapping("/buscar/{p_dni}")
+    public Paciente buscarPaciente(@PathVariable String p_dni){
+        return pacienteServ.buscarPaciente(p_dni);
+    }
 }

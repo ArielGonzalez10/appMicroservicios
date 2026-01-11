@@ -52,4 +52,9 @@ public class PacienteService implements IPacienteService{
         
         pacienteRepo.save(pacEditar);
     }
+
+    @Override
+    public Paciente buscarPaciente(String p_dni) {
+        return pacienteRepo.buscarPaciente(p_dni);
+    }
 }
